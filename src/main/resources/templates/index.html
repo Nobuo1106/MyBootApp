@@ -6,12 +6,31 @@
     <style>
     h1 { font-size: 18pt; font-weight:bold; color:gray; }
     body { font-size: 13pt; color: gray; margin: 5px 25px; }
-    pre { font-size: 13px; color:gray; padding: 5px 10px; border:1px solid gray;}
+    tr { margin:5px; }
+    th { padding:5px; color:white; background:darkgray; }
+    td { padding:5px; color:black; background:#e0e0ff; }
     </style>
   </head>
 <!--  { font-size: 13px; color:gray; padding: 5px 10px; border:1px solid gray;} を<style>に追加 -->
   <body>
-    <h1>Hello Page</h1>
+  	<h1 th:text="#{content.title}">Hello page</h1>
+  	<p th:text="${id} + ' is ' + ${check} ? ${trueVal} : ${falseVal}"></p>
+  </body>
+  
+  <!-- <body>
+  	<h1 th:text="#{content.title}">Hello page</h1>
+  	<div th:object="${object}">
+  	<p th:text="|my name is *{name}. mail address is *{value}.|">message.</p>
+  	<table th:object="${object}">
+  		<tr><th>ID</th><td th:text="*{id}"></td></tr>
+  		<tr><th>NAME</th><td th:text="*{name}"></td></tr>
+  		<tr><th>MAIL</th><td th:text="*{value}"></td></tr>
+  	</table>
+  	</div>
+  </body> -->
+  
+  <!-- <body> -->
+    <!-- <h1>Hello Page</h1>
     <pre th:text="${msg}">please wait...</pre>
     <form method="post" action="/">
     <div>
@@ -40,5 +59,5 @@
     </div>
     <input type="submit" value="Click" />
     </form>
-  </body>
+  </body> -->
 </html>
